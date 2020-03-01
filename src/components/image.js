@@ -44,6 +44,22 @@ const Image = () => {
           }
         }
       }
+
+      maxTwoK: file(relativePath: { eq: "gatsby-astronaut.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 2000, maxHeight: 2000) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+
+      noMax: file(relativePath: { eq: "gatsby-astronaut.png" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `)
 
@@ -73,6 +89,16 @@ const Image = () => {
 
       <span>maxHeight: 200, maxWidth: 600. Crop Height</span>
       <Img fluid={data.cropHeight.childImageSharp.fluid} />
+
+      <hr />
+
+      <span>Max 2k: fluid smaller</span>
+      <Img fluid={data.maxTwoK.childImageSharp.fluid} />
+
+      <hr />
+
+      <span>noMax in query: max image size, fluid smaller</span>
+      <Img fluid={data.noMax.childImageSharp.fluid} />
 
       <hr />
     </>
