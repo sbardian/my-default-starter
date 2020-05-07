@@ -72,7 +72,7 @@ const Image = () => {
         relativePath: { eq: "portraitdog.jpg" }
       ) {
         childImageSharp {
-          fluid(maxWidth: 200, maxHeight: 500) {
+          fluid(maxWidth: 100, maxHeight: 500) {
             ...GatsbyImageSharpFluid
             ...GatsbyImageSharpFluidLimitPresentationSize
           }
