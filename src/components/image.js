@@ -181,8 +181,8 @@ const Image = () => {
       <hr />
 
       <span>
-        noMax: in query: max image size, won't go over image size regardless of
-        maxWidth query value, fluid smaller
+        maxWidth 4000: in query: max image size (1600px), won't go over image
+        size regardless of maxWidth query value, fluid smaller
       </span>
       <Img
         fluid={data.landscapeDogNoLargerThanImageWidth.childImageSharp.fluid}
